@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "bifrostkit"
+version = "0.1.0"
+description = "BifrostKit - automação dev (contexto, docs, testes, db, mcp)"
+authors = ["adrianoeusebio2006c1@gmail.com"]
+readme = "README.md"
+packages = [{ include = "bifrostkit" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.12.3"
+pydantic = "^2.7.4"
+pyyaml = "^6.0.2"
+rich = "^13.7.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.6"
+
+[tool.poetry.scripts]
+bifrost = "bifrostkit.cli.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

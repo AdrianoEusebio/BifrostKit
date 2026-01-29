@@ -1,0 +1,27 @@
+{
+  "id": "refinador-contexto",
+  "nome": "Refinador de Contexto",
+  "versao": "1.0.0",
+  "transporte": {
+    "tipo": "docker-stdio",
+    "imagem": "mcp-refinador-mock:latest",
+    "comando": ["python", "-m", "server"],
+    "env": {
+      "LOG_LEVEL": "info"
+    }
+  },
+  "acoes": [
+    {
+      "chave": "refinar_contexto",
+      "titulo": "Refinar contexto",
+      "descricao": "Melhora resumo, checklist técnico e checklist de testes do arquivo de contexto.",
+      "entradas": [
+        { "nome": "caminho_contexto_md", "tipo": "arquivo", "obrigatorio": true }
+      ],
+      "saida": { "tipo": "markdown", "destino": "sobrescrever_entrada" }
+    }
+  ],
+  "ganchos": {
+    "contexto.acao_refino": "refinar_contexto"
+  }
+}

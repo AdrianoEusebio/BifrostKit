@@ -1,0 +1,20 @@
+nome: "exemplo"
+descricao: "Projeto exemplo (sem Jira)"
+
+contexto:
+  provedor_padrao: "manual"  # manual | jira | arquivo
+  pasta_saida: "work"
+
+documentacao:
+  pasta_saida: "docs"
+  fontes:
+    - tipo: "postman"        # postman | openapi | nelmio
+      caminho: "postman/collections/main.json"
+
+postman:
+  colecao_caminho: "postman/collections/main.json"
+  ambientes_pasta: "postman/environments"
+
+mcp:
+  habilitado: true
+  pasta_mcps: "mcps"   # onde ficam os JSON dos MCPs
